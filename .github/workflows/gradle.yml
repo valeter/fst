@@ -48,15 +48,17 @@ jobs:
             body: '❌ ${{ github.workflow }} failed: ${{ steps.gradle.outputs.build-scan-url }}'
           })
     - name: Upload build reports
+      if: github.event_name == 'push'
       uses: actions/upload-artifact@v3
       with:
         name: build-reports
         path: build/reports/
     - name: Run allureReport with Gradle wrapper
+      if: github.event_name == 'push'
       id: gradle-allure
       run: ./gradlew allureReport
     - name: Deploy report to Github Pages
-      if: always()
+      if: github.event_name == 'push'
       uses: peaceiris/actions-gh-pages@v2
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
