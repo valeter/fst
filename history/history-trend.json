@@ -1,7 +1,4 @@
 [ {
-  "buildOrder" : 11,
-  "reportUrl" : "https://valeter.github.io/fst/11/",
-  "reportName" : "Allure Report with history",
   "data" : {
     "failed" : 0,
     "broken" : 0,
