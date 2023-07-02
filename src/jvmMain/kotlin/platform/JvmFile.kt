@@ -89,6 +89,7 @@ fun java.io.File.toProjectFile(): File = object : File {
 }
 
 // Backport slice from JDK 13
+@Suppress("EXTENSION_SHADOWED_BY_MEMBER")
 private fun ByteBuffer.slice(index: Int, length: Int): ByteBuffer {
     position(index)
     return slice().limit(length) as ByteBuffer

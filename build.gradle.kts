@@ -4,6 +4,8 @@ plugins {
     kotlin("multiplatform") version "1.8.20"
     id("org.jetbrains.compose") version "1.4.0"
     java
+
+    id("io.qameta.allure") version "2.11.2"
 }
 
 group = "ru.anisimov.fst"
@@ -76,3 +78,4 @@ compose.desktop {
         }
     }
 }
+
