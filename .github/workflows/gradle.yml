@@ -52,28 +52,13 @@ jobs:
       with:
         name: build-reports
         path: build/reports/
-    - name: Allure report V2
-      # You may pin to the exact commit or the version.
-      # uses: QuintilianoNery/action-allure-report-V2@0695401fc18f6a083fab548315fc10f1cc4f56e6
-      uses: QuintilianoNery/action-allure-report-V2@0.2.0
-      with:
-        # Allure test result data dir
-        results-dir: build/allure-results
-        # Allure report target dir
-        report-dir: allure-report
+    - name: Run allureReport with Gradle wrapper
+      id: gradle-allure
+      run: ./gradlew allureReport
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: allure
-        PUBLISH_DIR: allure-report
-    - name: Post the link to the report
-      if: always()
-      uses: Sibz/github-status-action@v1
-      with: 
-        authToken: ${{secrets.GITHUB_TOKEN}}
-        context: 'Test report'
-        state: 'success'
-        sha: ${{ github.event.pull_request.head.sha }}
-        target_url: valeter.github.io/allure-report
+        PUBLISH_DIR: build/reports/allure-report/allureReport
