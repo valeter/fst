@@ -1,15 +1,15 @@
-=== FST
+# FST
 
 [![fst build](https://github.com/valeter/fst/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/valeter/fst/actions/workflows/gradle.yml)
 
-==== Description
+## Description
 
 Simple and fast text editor
 
-==== Usage
+## Usage
 
 TODO
 
-==== Links
+## Links
 
 Github Pages: https://valeter.github.io/fst/
