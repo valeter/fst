@@ -41,18 +41,18 @@ jobs:
         # Allure test result data dir
         allure_results: build/allure-results
         # Allure report target dir
-        allure_report: build/reports/tests/allTests/
+        allure_report: allure-report
         # Folder with gh-pages branch
         gh_pages: allure
         # Folder for allure history
-        allure_history: docs/allure-history
+        allure_history: allure-history
     - name: Deploy report to Github Pages
       if: always()
       uses: peaceiris/actions-gh-pages@v2
       env:
         PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         PUBLISH_BRANCH: allure
-        PUBLISH_DIR: docs/allure-history
+        PUBLISH_DIR: allure-history
     - name: Post the link to the report
       if: always()
       uses: Sibz/github-status-action@v1
@@ -61,4 +61,4 @@ jobs:
         context: 'Test report'
         state: 'success'
         sha: ${{ github.event.pull_request.head.sha }}
-        target_url: valeter.github.io/docs/allure-history/${{ github.run_number }}
+        target_url: valeter.github.io/github-allure-history/${{ github.run_number }}
