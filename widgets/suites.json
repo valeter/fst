@@ -1,4 +1,1 @@
-{
-  "total" : 0,
-  "items" : [ ]
-}
+{"total":5,"items":[{"uid":"91e4d19a09bed36f97cf37bfcccfcb25","name":"engine.InMemoryPieceTableTest.Delete","statistic":{"failed":0,"broken":0,"skipped":0,"passed":8,"unknown":0,"total":8}},{"uid":"c621ba32be38e7b2183434c49e30be35","name":"engine.InMemoryPieceTableTest.Redo","statistic":{"failed":0,"broken":0,"skipped":0,"passed":7,"unknown":0,"total":7}},{"uid":"46b0340b25838a317ecd26d70cfc4d6f","name":"engine.InMemoryPieceTableTest.Insert","statistic":{"failed":0,"broken":0,"skipped":0,"passed":6,"unknown":0,"total":6}},{"uid":"c9c0b4d50b17a4452803755df13b8626","name":"engine.InMemoryPieceTableTest.Undo","statistic":{"failed":0,"broken":0,"skipped":0,"passed":6,"unknown":0,"total":6}},{"uid":"bf0064dd248dfa14d17473f0732dddfc","name":"engine.InMemoryPieceTableTest.MixedScenario","statistic":{"failed":0,"broken":0,"skipped":0,"passed":4,"unknown":0,"total":4}}]}
