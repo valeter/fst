@@ -32,13 +32,13 @@ jobs:
     - name: Run build with Gradle wrapper
       id: gradle
       run: ./gradlew packageReleaseUberJarForCurrentOS
-    - name: Capture tag name
-      uses: olegtarasov/get-tag@v2.1.2
-      id: tagName
+    - uses: actions/checkout@v2
+    - name: Set env
+      run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
     - name: Upload release
       uses: actions/upload-artifact@v3
       with:
-        name: release-${{ steps.tagName.outputs.tag }}
+        name: release-${{ env.RELEASE_VERSION }}
         path: |
-           build/compose/jars
-           src/script
+           build/compose/jars/*.jar
+           src/script/*
