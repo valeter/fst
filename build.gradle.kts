@@ -9,7 +9,7 @@ plugins {
 }
 
 group = "ru.anisimov.fst"
-version = "1.0-SNAPSHOT"
+version = (extra["fst.version"] as String)
 
 repositories {
     google()
@@ -25,6 +25,9 @@ kotlin {
         withJava()
         testRuns["test"].executionTask.configure {
             useJUnitPlatform()
+            dependencies {
+                implementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
+            }
         }
     }
     sourceSets {
@@ -55,7 +58,7 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Dmg, TargetFormat.Msi, TargetFormat.Deb)
             packageName = "fst"
-            packageVersion = "1.0.0"
+            packageVersion = version as String
 
             windows {
                 menu = true
@@ -78,4 +81,3 @@ compose.desktop {
         }
     }
 }
-
