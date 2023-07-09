@@ -1,6 +1,6 @@
 # FST
 
-[![fst build](https://github.com/valeter/fst/actions/workflows/gradle.yml/badge.svg?branch=main)](https://github.com/valeter/fst/actions/workflows/gradle.yml)
+[![Build and upload reports](https://github.com/valeter/fst/actions/workflows/gradle_build.yml/badge.svg)](https://github.com/valeter/fst/actions/workflows/gradle_build.yml)
 
 ## Description
 
