@@ -31,8 +31,7 @@ jobs:
       uses: gradle/gradle-build-action@v2
     - name: Run build with Gradle wrapper
       id: gradle
-      run: ./gradlew packageReleaseUberJarForCurrentOS
-    - uses: actions/checkout@v2
+      run: ./gradlew packageReleaseUberJarForCurrentOS copyScriptsToJars
     - name: Set env
       run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" >> $GITHUB_ENV
     - name: Upload release
@@ -41,4 +40,3 @@ jobs:
         name: release-${{ env.RELEASE_VERSION }}
         path: |
            build/compose/jars/*
-           src/script/*
