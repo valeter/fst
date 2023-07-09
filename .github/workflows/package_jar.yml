@@ -40,5 +40,5 @@ jobs:
       with:
         name: release-${{ env.RELEASE_VERSION }}
         path: |
-           build/compose/jars/*.jar
+           build/compose/jars/*
            src/script/*
