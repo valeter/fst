@@ -80,3 +80,9 @@ compose.desktop {
         }
     }
 }
+
+tasks.register<Copy>("copyScriptsToJars") {
+    from(layout.projectDirectory.dir("src/script"))
+    include("*.*")
+    into(layout.buildDirectory.dir("compose/jars"))
+}
