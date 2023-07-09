@@ -21,13 +21,11 @@ kotlin {
     jvm {
         compilations.all {
             kotlinOptions.jvmTarget = "11"
+            kotlinOptions.allWarningsAsErrors = true
         }
         withJava()
         testRuns["test"].executionTask.configure {
             useJUnitPlatform()
-            dependencies {
-                implementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
-            }
         }
     }
     sourceSets {
@@ -47,6 +45,7 @@ kotlin {
         val jvmTest by getting {
             dependencies {
                 implementation(kotlin("test"))
+                implementation("org.junit.jupiter:junit-jupiter-params:5.9.2")
             }
         }
     }
